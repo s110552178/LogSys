@@ -1,0 +1,3 @@
+Info || 2016-09-04 12:11:50 || TestInfoMessage
+Critical || 2016-09-04 12:11:50 || TestCriticalMessage
+Warning || 2016-09-04 12:11:50 || TestWarningMessage

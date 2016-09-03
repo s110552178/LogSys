@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LogSysCore;
 
 namespace LogSys
 {
@@ -10,6 +6,10 @@ namespace LogSys
     {
         static void Main(string[] args)
         {
+            var Logs = new Log();
+            Logs.WriteFile(LogSysCore.Enum.LogLevel.Info, "TestInfoMessage");
+            Logs.WriteFile(LogSysCore.Enum.LogLevel.Critical, "TestCriticalMessage");
+            Logs.WriteFile(LogSysCore.Enum.LogLevel.Warning, "TestWarningMessage");
         }
     }
 }

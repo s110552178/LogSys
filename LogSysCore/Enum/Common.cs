@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogSysCore
+namespace LogSysCore.Enum
 {
-    public class Core
+    public enum LogLevel
     {
+        Info,
+        Warning,
+        Critical
     }
 }

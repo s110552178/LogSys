@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogSys", "LogSys\LogSys.csproj", "{13BE5912-574D-4730-880D-42C6F308CE08}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallingProject", "LogSys\CallingProject.csproj", "{13BE5912-574D-4730-880D-42C6F308CE08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogSystem", "LogSysCore\LogSystem.csproj", "{AFA80FC9-C0CF-47A0-8096-11899003D2FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{13BE5912-574D-4730-880D-42C6F308CE08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13BE5912-574D-4730-880D-42C6F308CE08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13BE5912-574D-4730-880D-42C6F308CE08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFA80FC9-C0CF-47A0-8096-11899003D2FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA80FC9-C0CF-47A0-8096-11899003D2FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA80FC9-C0CF-47A0-8096-11899003D2FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA80FC9-C0CF-47A0-8096-11899003D2FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
