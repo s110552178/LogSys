@@ -15,47 +15,37 @@ namespace LogSysCore
         {
             if (string.IsNullOrEmpty(PathForLogFile))
             {
-                var DirPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + @"\Log";
-
-                var CheckFilePathResult = CheckFilePath(DirPath);
-                if (CheckFilePathResult.Equals(true))
+                var DateTimeNow = DateTime.Now.ToString("yyyyMMdd");
+                if (!Directory.Exists(@"/Log"))
                 {
-                    LogPath = DirPath + @"\\" + DateTime.Now.ToString("yyyyMMdd");
-                    var LogPosition = File.Create(LogPath);
-                    LogPosition.Close();
-
+                    Directory.CreateDirectory(@"/Log");
                 }
+                if (!File.Exists(@"/Log/"+DateTimeNow))
+                {
+                    var CF = File.Create(@"/Log/" + DateTimeNow);
+                    CF.Close();
+                }
+                LogPath = @"/Log/" + DateTimeNow;
             }
             else
             {
                 LogPath = PathForLogFile;
             }
         }
-        public bool CheckFilePath(string path)
-        {
-            var result = false;
-
-            while (result.Equals(false))
-            {
-                try
-                {
-                    Directory.CreateDirectory(path);
-                    
-                    result = true;
-                }
-                catch (Exception ex)
-                {
-                    //Create Directory Fail
-                }
-            }
-
-            return result;
-        }
-        public void WriteFile(LogLevel logLevel, string message)
+        
+        public void WriteMessageWithLevel(LogLevel logLevel, string message)
         {
             var streamWriter = new StreamWriter(LogPath, true);
             var RecordDateTime = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
             var LogMessage = string.Concat(logLevel.ToString(), " || ", RecordDateTime, " || ", message);    
+            streamWriter.WriteLine(LogMessage);
+            streamWriter.Close();
+        }
+        public void WriteMessage(string message)
+        {
+            var streamWriter = new StreamWriter(LogPath, true);
+            var RecordDateTime = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+            var LogMessage = string.Concat(RecordDateTime, " || ", message);
             streamWriter.WriteLine(LogMessage);
             streamWriter.Close();
         }
